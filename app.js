@@ -63,10 +63,10 @@ app.post('/metodo', async (req,res) => {
     }
 })
 
-// Invocar la función y manejar errores 
+
 main().catch((err) => console.log(err));
 
-// Iniciar el servidor y escuchar en el puerto especificado en la variable PORT
+
 app.listen(process.env.PORT, () => {
     console.log(`El servidor en funcionamiento en el puerto ${process.env.PORT}`);
 });
