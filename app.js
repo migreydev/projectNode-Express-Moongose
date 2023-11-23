@@ -6,12 +6,13 @@ const Molino = require('./models/molino');
 const Metodo = require('./models/metodo');
 const Cafe = require('./models/cafe');
 
-// Crear una instancia de Express
+// Instancia de Express
 const app = express();
+
 
 require('dotenv').config();
 mongoose.set("strictQuery", false);
-// Habilitar CORS 
+// Habilitar CORS para manejar las solicitudes
 app.use(cors());
 app.use(express.json());
 
@@ -63,7 +64,7 @@ app.post('/metodo', async (req,res) => {
     }
 })
 
-// Invocar la función y manejar errores 
+// Llamamos a la función 
 main().catch((err) => console.log(err));
 
 // Iniciar el servidor y escuchar en el puerto especificado en la variable PORT
