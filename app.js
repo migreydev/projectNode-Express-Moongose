@@ -16,6 +16,11 @@ mongoose.set("strictQuery", false);
 app.use(cors());
 app.use(express.json());
 
+app.use('/cafe', require('./routes/cafe'));
+app.use('/molino', require('./routes/molino'));
+
+
+
 
 // Función que conecta a la base de datos
 async function main() {
