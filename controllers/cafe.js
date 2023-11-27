@@ -52,6 +52,7 @@ const updateCoffee = async (req, res) => {
     const newCoffee = req.body;
 
     try {
+
         if (!coffee.length) {
             return res.status(404).json({ msg: `No existe el cafe con el id ${idCoffee}` });
         }

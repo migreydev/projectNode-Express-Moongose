@@ -58,19 +58,15 @@ const addMolino = async (req, res) => {
 const updateMolino = async (req, res) => {
     const idMolino = req.params.id;
     // Obtener el molino actual por su ID
-    const molino = await Molino.find({ _id: idMolino });
+    const molino = await Molino.find({ "_id": idMolino });
 
     // Obtener los nuevos datos del molino desde el cuerpo de la solicitud
     const newMolino = req.body;
 
     try {
-        // Verificar si el molino existe
-        if (!molino.length) {
-            return res.status(404).json({ msg: `No existe el molino con el id ${idMolino}` });
-        }
-
+    
         // Actualizar el molino en la base de datos
-        await Molino.updateOne({ _id: idMolino }, newMolino);
+        await Molino.updateOne({ "_id": idMolino }, newMolino);
         res.json({ newMolino });
     } catch (error) {
         res.status(500).json({ message: error });

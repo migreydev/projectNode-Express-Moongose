@@ -18,6 +18,7 @@ app.use(express.json());
 
 app.use('/cafe', require('./routes/cafe'));
 app.use('/molino', require('./routes/molino'));
+app.use('/metodo', require('./routes/metodo'));
 
 
 
